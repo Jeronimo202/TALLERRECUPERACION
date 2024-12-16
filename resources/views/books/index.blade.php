@@ -31,7 +31,18 @@
                 <input type="date" class="form-control" name="published_at" id="published_at">
                 <br>
                 <label for="genre"><strong>genre:</strong></label> 
-                <input type="text" class="form-control" name="genre'" id="genre'">
+                <select name="genre" id="genre" class="form-control">
+                    <option value="Accion">Accion</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Ciencia">Ciencia</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Fantasia">Fantasia</option>
+
+                    
+                    
+                </select>
+                
                 <br>
                 <button type="submit">Guardar</button>
             </form>
@@ -64,7 +75,7 @@
                     </form>
                     </td>
                     <td>
-                        <form action="{{ route('books.booksedit',$book->id)}}">
+                        <form action="{{ route('books.edit',$book->id)}}">
                             @csrf
                             @method('edit')
                             <button type="submit">Editar</button>

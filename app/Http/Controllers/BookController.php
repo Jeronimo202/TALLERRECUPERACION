@@ -32,7 +32,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $book = new Book();
-        $book->titlle = $request->tittle;
+        $book->title = $request->title;
         $book->published_at = $request->published_at;
         $book->genre= $request->genre;
 
@@ -64,7 +64,7 @@ class BookController extends Controller
     public function update(Request $request, string $id)
     {
         $book = Book::find($id);
-        $book->titlle = $request->tittle;
+        $book->title = $request->title;
         $book->published_at = $request->published_at;
         $book->genre= $request->genre;
         $book->save();

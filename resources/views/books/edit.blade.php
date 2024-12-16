@@ -23,8 +23,18 @@
                             <input type="date" name="published_at" id="published_at" class="form-control" value="{{ $book->published_at}}" required>
                         </div>
                         <div class="mb-3">
-                            <label for="genre"><strong>genre:</strong></label> 
-                            <input type="text" class="form-control" id="genre" name="genre" id="genre" value="{{ $book->genre }}" required>
+                            <label for="genre_book">Genre:</label> 
+                            <br>
+                            <select name="genre" class="form-control" id="genre" required>
+                                <option value="Accion" {{ $book->genre=='Accion'?'selected':'' }}>Accion</option>
+                                <option value="Terror" {{ $book->genre=='Terror'?'selected':'' }}>Terror</option>
+                                <option value="Ciencia" {{ $book->genre=='Ciencia'?'selected':'' }}>Ciencia</option>
+                                <option value="Romance" {{ $book->genre=='Romance'?'selected':'' }}>Romance</option>
+                                <option value="Aventura" {{ $book->genre=='Aventura'?'selected':'' }}>Aventura</option>
+                                <option value="Fantasia" {{ $book->genre=='Fantasia'?'selected':'' }}>Fantasia</option>
+
+                            </select>
+                            
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-outline-info" id="botonEditar">Editar</button>
