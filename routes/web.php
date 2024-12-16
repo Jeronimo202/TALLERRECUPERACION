@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,8 @@ Route::delete('/authors/{id}', [AuthorController::class,'destroy'])->name('autho
 Route::get('/authors/{id}', [AuthorController:: class, 'edit'])->name('authors.edit');
 Route::put('/authors/{id}', [AuthorController:: class, 'update'])->name('authors.update');
 
+Route::get('/books', [BookController::class,'index'])->name('books.index');
+Route::post('/books', [BookController::class,'store'])->name('books.store');
+Route::delete('/books/{id}', [BookController::class,'destroy'])->name('books.destroy');
+Route::get('/books/{id}', [BookController:: class, 'edit'])->name('books.edit');
+Route::put('/books/{id}', [BookController:: class, 'update'])->name('books.update');
