@@ -14,7 +14,8 @@ use App\Http\Controllers\BookController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Auth::routes();
+Route::middleware('Auth')->group(function (){
 Route::get('/authors', [AuthorController::class,'index'])->name('authors.index');
 Route::post('/authors', [AuthorController::class,'store'])->name('authors.store');
 Route::delete('/authors/{id}', [AuthorController::class,'destroy'])->name('authors.destroy');
@@ -26,3 +27,11 @@ Route::post('/books', [BookController::class,'store'])->name('books.store');
 Route::delete('/books/{id}', [BookController::class,'destroy'])->name('books.destroy');
 Route::get('/books/{id}', [BookController:: class, 'edit'])->name('books.edit');
 Route::put('/books/{id}', [BookController:: class, 'update'])->name('books.update');
+
+});
+
+
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
